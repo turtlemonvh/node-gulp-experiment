@@ -20,10 +20,22 @@ The goal is to have
 
 ## Use
 
+To set up
+
     cd node-gulp-test
     sudo npm install --global gulp
     npm install
-    grunt build  # fancy async build magic
+
+    # Build and launch server
+    gulp 
+
+
+You should be able to hit the following in your browser without any 404s, and with templates filled in.
+
+- http://localhost:3000/
+- http://localhost:3000/app
+- http://localhost:3000/login
+
 
 ## About
 
@@ -50,7 +62,6 @@ http://blog.overzealous.com/post/74121048393/why-you-shouldnt-create-a-gulp-plug
 http://gulpjs.com/
 https://github.com/osscafe/gulp-cheatsheet
 https://github.com/gulpjs/gulp/blob/master/docs/API.md
-https://github.com/osscafe/gulp-cheatsheet
 
 https://github.com/gulpjs/gulp/blob/master/docs/API.md#deps
 - declare task dependencies
@@ -60,6 +71,16 @@ https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob--opts-tasks
 
 https://www.npmjs.com/package/gulp-sass
 - fast sass
+
+https://www.npmjs.com/package/gulp-nodemon
+https://www.npmjs.com/package/gulp-express
+- serve express so that it gets reloaded whenever code changes
+
+http://expressjs.com/starter/hello-world.html
+http://expressjs.com/starter/basic-routing.html
+http://expressjs.com/4x/api.html
+https://github.com/strongloop/express/wiki/Migrating-from-3.x-to-4.x
+- express
 
 ## Fixes / TODOs
 

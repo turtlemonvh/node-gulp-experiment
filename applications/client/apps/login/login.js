@@ -1,5 +1,3 @@
-(function(){
-
-    alert("On the login page")
-
+(function() {
+    alert("On the login page");
 })();

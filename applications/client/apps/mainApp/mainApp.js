@@ -1,5 +1,3 @@
-(function(){
-
-    alert("On the main application page")
-
+(function() {
+    alert("On the main application page");
 })();

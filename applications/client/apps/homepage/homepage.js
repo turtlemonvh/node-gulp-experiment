@@ -1,5 +1,3 @@
-(function(){
-
-    alert("On the homepage")
-
+(function() {
+    alert("On the homepage");
 })();

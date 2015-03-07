@@ -18,6 +18,7 @@ try {
     var sourcemaps = require("gulp-sourcemaps");
     var uglify = require("gulp-uglify");
     var util = require("gulp-util");
+    var nodemon = require("gulp-nodemon");
     //var browserify = require("browserify");
     //var watchify = require("watchify");
 } catch (e) {
@@ -40,12 +41,15 @@ try {
     process.exit(1);
 }
 
-
+/*
+ * Constants
+ */
 const JS_BASE_DIR = "./applications/client/";
 const APPS_SRC_DIR = JS_BASE_DIR + "apps/";
-const APPS_DIST_DIR = "./public_html/js/apps/";
+const APPS_DIST_DIR = "./public/js/apps/";
 const TESTS_GLOB = "./tests/client/**/*.js";
- 
+const SERVER_SCRIPT = "applications/server/app.js";
+
 const EXTERNAL_LIBS = {
     jquery: "./node_modules/jquery/dist/jquery.min.js",
     bootstrap: "./node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -147,6 +151,23 @@ gulp.task("build-apps", function() {
 
 })
 
+/*
+ * Run express server
+ */
+gulp.task('serve', function () {
+    // More config options
+    // https://github.com/remy/nodemon#specifying-extension-watch-list
+    nodemon({
+        script: SERVER_SCRIPT,
+        ext: 'html js'
+    })
+    .on('change', ['lint'])
+    .on('restart', function () {
+        console.log('Change detected: restarting')
+    })
+})
+
 gulp.task("build", ["build-common-lib", "build-apps"]);
 
+gulp.task("default", ["build", "serve"]);
 
