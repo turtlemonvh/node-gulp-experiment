@@ -41,7 +41,7 @@ You should be able to hit the following in your browser without any 404s, and wi
 
 Based off 
 
-- Article: http://thanpol.as/grunt/Managing-large-scale-projects-with-Grunt/
+- Article: https://thanpol.as/grunt/Managing-large-scale-projects-with-Grunt
 - Github: https://github.com/booleangate/getting-started-with-gulp-and-browserify
 
 Notes
